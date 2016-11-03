@@ -23,6 +23,8 @@ class Application extends CI_Controller {
 		$this->data = array();
 		$this->data['pagetitle'] = "Jim's Joint";
 		$this->data['ci_version'] = (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '';
+        $this->data['userrole'] = $this->session->userdata('userrole');
+		if ($this->data['userrole'] == NULL) $this->data['userrole'] = '?';
 	}
 
 	/**
@@ -34,7 +36,11 @@ class Application extends CI_Controller {
 		// use layout content if provided
 		if (!isset($this->data['content']))
 			$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+        
+        $this->data['caboose_styles'] = $this->caboose->styles();
+        $this->data['caboose_scripts'] = $this->caboose->scripts();
+        $this->data['caboose_trailings'] = $this->caboose->trailings();
+        
 		$this->parser->parse($template, $this->data);
 	}
-
 }
