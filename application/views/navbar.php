@@ -16,6 +16,9 @@
 				<li><a href="/">Home</a></li>
 				<li><a href="/hiring">Hiring</a></li>
 				<li><a href="/shopping">Shopping</a></li>
+                <li><a href="/toggle">Toggle Role</a></li>
+                <li><a href="/admin">Administrator Page</a></li>
+                <p class="navbar-text navbar-right">Role: {userrole}</p>
             </ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
