@@ -33,7 +33,15 @@ class Crud extends Application
         $this->data['fcategory'] = makeComboBox('Category', 'category', $record->category, $codes);
         // show the editing form
         $this->data['pagebody'] = "mtce-edit";
+        $this->data['zsubmit'] = makeSubmitButton('Save', 'Submit changes');
+        
         
         $this->render();
+    }
+    
+    function cancel(){
+        $this->session->unset_userdata('key');
+        $this->session->unset_userdata('record');
+        $this->index();
     }
 }
