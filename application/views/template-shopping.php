@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -29,6 +29,11 @@
 				</div>
 			</div>
             {content}
+            <div class=row">
+                 <a class="btn btn-primary btn-default" role="button" href="/shopping/checkout">Checkout</a>
+                 <a class="btn btn-default" role="button" href="/shopping/cancel">Cancel This Order</a>
+            </div>
+            <br>
             <p class="footer">Page rendered in <strong>0.0155</strong> seconds. 
                 {ci_version}</p>
         </div>
