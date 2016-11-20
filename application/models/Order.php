@@ -93,4 +93,12 @@ class Order extends CI_Model {
         // save it
         $xml->asXML('../data/order' . $this->number . '.xml');
     }
+    public function total() {
+        $total = 0;
+        foreach($this->items as $key => $value) {
+            $menu = $this->menu->get($key);
+            $total += $value * $menu->price;
+        }
+        return $total;
+    }   
 }
